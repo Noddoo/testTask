@@ -249,11 +249,11 @@ function onClickSvg() {
 function onClickDiv() {
     let res;
     if (clicks === 0 && isSquareCreated) { // დახატული იყო და ააცილა
-        res = 'დახატული იყო და ააცილა';
+        res = 1;
     } else if(clicks === 0 && !isSquareCreated) { // დახატული არ იყო და ბადეზე დააჭირა
-        res = 'დახატული არ იყო და ბადეზე დააჭირა';
-    } else if(clicks === 1 && isSquareCreated) { // სწორად გასცა
-        res = 'დახატული იყო და სწორად გასცა';
+        res = 2;
+    } else if(clicks === 1 && isSquareCreated) { // სწორად დაინახა
+        res = 3;
     }
     saveAnswer(res);
     loadSituation();
@@ -263,9 +263,9 @@ function onClickDiv() {
 function onNegativeAnswerClick() {
     let res;
     if (isSquareCreated) { // დახატული იყო და უარი უპასუხა
-        res = 'დახატული იყო და უარი უპასუხა';
+        res = 4;
     } else { // უარი სწორად უპასუხა
-        res = 'უარი სწორად უპასუხა';
+        res = 5;
     }
     saveAnswer(res);
     loadSituation();
@@ -286,7 +286,7 @@ function saveAnswer(ans) {
 // ყველა პასუხის ბაზაში გაგზავნის ფუნქცია
 function submitAnswers(answers) {
     const Http = new XMLHttpRequest();
-    const url='sendAnswers?a=' + encodeURIComponent(JSON.stringify(answers).toString());
+    const url='sendAnswers?answers=' + encodeURIComponent(JSON.stringify(answers).toString());
     Http.open("GET", url);
     Http.send();
 

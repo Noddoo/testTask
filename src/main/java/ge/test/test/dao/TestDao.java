@@ -19,17 +19,13 @@ public class TestDao {
             Connection conn = DriverManager.getConnection(myUrl, "root", "nodo");
 
             for (int i = 0; i < answers.size(); i++) {
-                String query = " insert into answers (value, time)"
-                        + " values (?, ?)";
+                String query = " insert into answers (value, time) values (?, ?)";
 
                 PreparedStatement preparedStmt = conn.prepareStatement(query);
-                preparedStmt.setString (1, String.valueOf(answers.get(i).get("ans")));
-                preparedStmt.setString (2, String.valueOf(answers.get(i).get("time")));
-
-                // execute the preparedstatement
+                preparedStmt.setObject (1, answers.get(i).get("ans"));
+                preparedStmt.setObject (2, answers.get(i).get("time"));
                 preparedStmt.execute();
             }
-
             conn.close();
         }
         catch (Exception e)

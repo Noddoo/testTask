@@ -3,11 +3,11 @@ package ge.test.test.service;
 import ge.test.test.dao.TestDao;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
-@org.springframework.stereotype.Service
+@Service
 public class TestService {
     @Autowired
     TestDao testDao;
