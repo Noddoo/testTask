@@ -1,0 +1,35 @@
+.doc {
+    margin: 20px;
+}
+.dots {
+    border: 1px solid black;
+    overflow: auto;
+    font-size: 0;
+    padding: 20px;
+    display: inline-block;
+}
+.dot {
+    background-color: #f0f0f0;
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0px 20px 20px 0px;
+    transition: background-color 500ms linear;
+}
+
+.button {
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.rectSvg {
+    position: absolute;
+    z-index: 3;
+}
+
+.rectPolygon {
+    fill: transparent;
+    stroke-width:1;
+    stroke:rgb(0,0,0);
+}
